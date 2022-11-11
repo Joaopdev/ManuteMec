@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+
+  --cor-principal: rgb(202, 202, 202);
+  --cor-principal-light: rgb(224, 224, 224);
+  --cor-texto-principal: rgb(65, 65, 65);
+  --cor-item-navegacao: rgba(169, 169, 169, 0.8);
+  
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 255, 255) rgb(149, 149, 149);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: 1px solid rgb(149, 149, 149);
+}
+
+
+.cabecalhoDefault {
+  height: 120px;
+  width: 100vw;
+  background-color: var(--cor-principal);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+}
+
+.menuDefault {
+  margin: 0 auto;
+  width: 1200px;
+  max-width: 1400px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logotipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  color: black;
+}
+
+.logotipo p {
+  font-size: .6rem;
+}
+
+.imgLogotipo {
+  width: 140px;
+  image-rendering: pixelated;
+}
+
+.listaNavBar {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px
+
+}
+
+.listaNavBar a {
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+.listItem {
+  cursor: pointer;
+  
+
+  color: black;
+  font-size: .8rem;
+  font-weight: 600;
+  text-align: center;
+  user-select: none;
+
+}
+
+.listItem:active {
+  box-shadow: 0px 0px 0px 0px, inset 1px 1px 1px #000;
+  transform: translate(3px, 3px);
+}
+
+.listItem:hover {
+  background-color: rgb(194, 194, 194) ;
+}
+
+.containerDefault {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+  height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 30px;
+}
+
+
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0 10px 0;
+}
+
+.btn-submit { 
+  width: 100px;
+  padding: 10px 10px;
+  background-color: rgb(152, 219, 152);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.btn-submit:hover {
+  background-color: rgb(56, 223, 56);
+  color: white;
+}
+
+.btn-submit:active {
+  background-color: rgb(59, 158, 59);
+}
+
+.btn-cancel {
+  width: 100px;
+  padding: 10px 10px;
+  background-color: rgb(224, 170, 170);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.btn-cancel:hover {
+background-color: red;
+}
+
+.btn-cancel:active {
+  background-color: rgb(224, 170, 170);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+}
+
+
+
+
+
+
+.rodapeDefault {
+  height: 30px;
+  width: 100%;
+  background-color: var(--cor-principal);
+  position: absolute;
+  top: calc(100% - 30px);
+  text-align: center;
+  line-height: 30px;
+  font-size: .7rem;
+  
+}
+
+#linkRodape {
+  font-size: inherit;
+  color: inherit;
+  
+}
