@@ -1,0 +1,59 @@
+
+
+.containerMenuVertical {
+  width: 35%;
+  height: calc(500px - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.divisoria {
+  width: 1px;
+  min-height: 450px;
+}
+
+.subtituloMenuVertical {
+  font-size: 1.4rem;
+}
+
+.navMenuVertical {
+  width: 80%;
+  height: 400px;
+}
+
+.itemMenu {
+  width: 250px;
+  height: 45px;
+  background-color: var(--cor-item-navegacao);
+  border: 1px solid white;
+  color: var(--cor-texto-principal);
+  font-weight: 600;
+  list-style: none;
+  text-align: center;
+  line-height: 45px;
+  margin: 0 auto;
+  margin: 15px auto;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+  transition: ease .3s;
+}
+
+.itemMenu:hover {
+  background-color: rgba(169, 169, 169, 1);
+  color: black;
+  width: 70%;
+}
+
+.itemMenu:active {
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: rgb(146, 146, 146)
+}
+
+
+option {
+  font-size: 14px;
+  opacity: .8;
+}
