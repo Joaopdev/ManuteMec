@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,12 @@
   <link rel="stylesheet" href="./css/index.css">
   <title>ManuteMec&trade; | Home</title>
 </head>
+
 <body>
 
-  <header class="cabecalhoDefault">
+  <img id="backgroundImage" src="./assets/images/background.jpg"
+    alt="Imagem de fundo que mostra um mecanico analisando um motor">
+  <!-- <header style="background-color: inherit!important" class="cabecalhoDefault">
     <section class="menuDefault">
       <div class="logotipo" >
         <img class="imgLogotipo" src="./assets/logotipo.png" alt="Logotipo ManuteMec">
@@ -25,26 +29,75 @@
         </ul>
       </nav>
     </section>
-  </header>
+  </header> -->
 
-  <main class="containerMain">
-    <section class="apresentacao"></section>
-    <section class="planosVenda">
-      <nav>
-        <ul>
-          <li>Mensal</li>
-          <li>Trimestral</li>
-          <li>Anual</li>
-        </ul>
-      </nav>
-    </section>
-  </main>
+  <!-- <main class="card_Login">
+    <div>
 
-  <footer class="rodapeDefault">
-    Todos os direitos reservados ao criador <a id="linkRodape" target="_blank" href="https://github.com/Joaopdev/">JoaoPDev</a> &copy; 2022
-  </footer>
-  <script type="module" src="./app.js">
-    var veiculo = new Veiculo();
+    </div>
+  </main> -->
+  <section class="sectionLogin">
+
+    <div id="container_home">
+
+      <img src="./assets/logotipo_inverseColor.png" id="logotipo_home" alt="">
+      <p id="texto_home">O controle do seu carro na palma de sua mão</p>
+
+      <button onclick="abrirCardLogin()" id="botao_home">Iniciar</button>
+    </div>
+
+    <div class="container_login">
+
+      <div id="card_Login">
+        <h2 class="title_login">Entrar</h2>
+        <input class="form-control input-login" type="email" name="" id="inputEmail" placeholder="Digite seu e-mail">
+
+        <input class="form-control input-login" type="password" name="" id="inputSenha" placeholder="Digite sua senha">
+        
+        <a href="./pages/cadastros.html" class="form-control button-submit">Enviar</a>
+        <div class="message_login">
+          <p id="esqueci_senha">Esqueceu a senha?</p>
+
+       <div>
+        <p id="fazer_cadastro">Faça seu <p id="novo_cadastro">cadastro</p> </p>
+       </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <script>
+    function abrirCardLogin() {
+      let card = document.querySelector(".container_login")
+      let botao = document.querySelector("#botao_home");
+      if (card.style.display = "none") {
+        card.style.transition = "ease-in 1s";
+        card.style.display = "flex";
+        botao.style.visibility = "hidden";
+      }
+      else {
+        card.style.display = "flex"
+      }
+    }
+
+    
+
+    let esqueciSenha = document.querySelector("#esqueci_senha");
+    esqueciSenha.addEventListener("click", () => {
+      alert("Essa função ainda não foi implementada. Tente usar e-mail: admin@admin e senha: \"123456teste\" para teste");
+    })
+
+    let novoCadastro = document.querySelector("#novo_cadastro");
+    novoCadastro.addEventListener("click", function() {
+      alert("Essa função ainda não foi implementada. Tente usar e-mail: admin@admin e senha: \"123456teste\" para teste");
+    })
+
+
+
   </script>
 </body>
+
 </html>
