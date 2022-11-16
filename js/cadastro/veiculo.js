@@ -106,15 +106,7 @@ class Veiculo {
 		
 		console.log("chamando funcao mostrarTabela()");
 
-		if (img_noData.style.display != "none" && tabelaVeiculo.style.display == "none" && formularioVeiculo.style.display != "none") {
-			formularioVeiculo.style.display = "none";
-			tabelaVeiculo.style.display = "none"
-			img_noData.style.display = "none";
-			console.log("entrou no if");
-		} else {
-			tabelaVeiculo.style.display = "block";
-			img_noData.style.display = "none";
-		}
+		
 
 		veiculo.esconderFormularios();
 	}
