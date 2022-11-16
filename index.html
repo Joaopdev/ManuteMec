@@ -52,6 +52,9 @@
     function abrirCardLogin() {
       let card = document.querySelector(".container_login")
       let botao = document.querySelector("#botao_home");
+      let backgroundImage = document.querySelector("#backgroundImage");
+      backgroundImage.style.filter = "brightness(10%) ";
+
       if (card.style.display = "none") {
         card.style.transition = "ease-in 1s";
         card.style.display = "flex";
@@ -73,6 +76,8 @@
     novoCadastro.addEventListener("click", function() {
       alert("Essa função ainda não foi implementada. Tente usar e-mail: admin@admin e senha: \"123456teste\" para teste");
     })
+
+
 
 
 
