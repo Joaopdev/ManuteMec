@@ -1,0 +1,167 @@
+#backgroundImage {
+  filter: brightness(30%);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
+
+#container_home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
+  position: relative;
+  transition: ease-in 1s;
+ 
+
+}
+
+#logotipo_home {
+  width: 250px;
+  height: 100px;
+}
+
+#texto_home {
+  color: white;
+  text-align: center;
+  display: flex;
+}
+
+#botao_home {
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #505CFD;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  border: none
+}
+#botao_home:active {
+  background-color: #3f4cff;
+  transition: ease-in-out .2;
+} 
+
+.sectionLogin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80vw;
+  max-width: 1200px;
+  height: 400px;
+  max-height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container_login {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(255, 255, 255, 0.853);
+
+  width: 400px;
+  height: 350px;
+  border-radius: 25px;
+  transition: ease-in 5s;
+  box-shadow: rgba(255, 255, 255) 0px 2px 3px;
+ 
+}
+
+#card_Login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+
+  width: 80%;
+  height: 80%;
+}
+
+.title_login {
+  font-size: 18px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.form-control {
+  width: 100%;
+  height: 40px;
+  border: none;
+  padding: 5px 10px;
+  color: black;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  font-size: 14px;
+  opacity: .7;
+}
+
+.input-login {
+  background-color: rgba(255, 255, 255, 0.631);
+}
+
+#esqueci_senha {
+  cursor: pointer;
+  font-size: 14px;
+  
+}
+
+#esqueci_senha:active {
+  background-color: rgb(222, 222, 222);
+  user-select: none;
+}
+
+#fazer_cadastro {
+  font-size: 14px;
+  display: inline;
+  
+}
+#novo_cadastro {
+  cursor: pointer;
+  color: inherit;
+  font-size: 14px;
+  display: inline;
+  text-decoration: underline;
+}
+
+.button-submit {
+  background-color: green;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  line-height: 30px;
+}
+
+.button-submit:active {
+  background-color: rgb(0, 83, 0);
+}
+
+.message_login {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
