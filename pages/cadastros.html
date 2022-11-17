@@ -70,7 +70,10 @@
         <div class="container_veiculos " id="flip-card-inner">
 
           <div class="container_tabela_veiculo " id="flip-card-front">
-            <button class="btn-novoVeiculo btn-formVeiculo" onclick="veiculo.criarNovoVeiculo()">Novo veículo</button>
+            <div class="btn-group-tabela">
+              <button class="btn-novoVeiculo btn-formVeiculo" onclick="veiculo.criarNovoVeiculo()">Novo</button>
+              <button class="btn-voltar">Voltar</button>
+            </div>
             <table class="tabelaDefault">
               <thead>
                 <th class="center">ID</th>
@@ -79,8 +82,23 @@
                 <th>Cor</th>
                 <th>Ações</th>
               </thead>
-              <tbody id="tbody" class="">
+              <tbody id="tbodyVeiculos" class="">
                 <!-- aqui vai a tabela dinamica -->
+                <tr>
+                  <td>1</td>
+                  <td>Gol G5</td>
+                  <td>lpt8100</td>
+                  <td>teste</td>
+                  <td>teste</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Gol G6</td>
+                  <td>lpt8120</td>
+                  <td>teste</td>
+                  <td>teste</td>
+                </tr>
+
               </tbody>
             </table>
           </div>
@@ -101,7 +119,7 @@
               <label class="labelConfig" for="inputDate">Data de criação</label>
               <input class="inputConfig" id="inputDate" type="date">
 
-              <div class="btn-group">
+              <div class="btn-group ">
                 <button class="btn-submit" onclick="veiculo.salvar()" type="submit">Salvar</button>
                 <button class="btn-cancel" onclick="veiculo.cancelar()">Cancelar</button>
               </div>
@@ -366,6 +384,7 @@
   </footer>
 
   <script src="../js/cadastro/veiculo.js"></script>
+  <script src="../js/cadastro/categorias.js"></script>
 </body>
 
 </html>

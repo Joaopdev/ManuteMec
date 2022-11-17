@@ -16,7 +16,7 @@ class Veiculo {
 	}
 
 	listarTabela() {
-		let tbody = document.querySelector("tbody");
+		let tbody = document.querySelector("#tbodyVeiculos");
 
 		tbody.innerHTML = "";
 
@@ -132,12 +132,16 @@ class Veiculo {
 	esconderFormularios() {
 		let arrayFieldset = document.getElementsByTagName("fieldset");
 		let formularioVeiculo = document.querySelector(".formularioVeiculo");
+		let img_noData = document.querySelector(".svg_nodata");
+		let tabelaVeiculos = document.querySelector(".container_tabela_veiculo")
+		
+		img_noData.style.display = "none";
 
 
 		Array.from(arrayFieldset).map(index => {
 			if(index.style.display != "none") {
 				index.style.display = "none";
-				formularioVeiculo.style.display = "block";
+				tabelaVeiculos.style.display = "block";
 
 			}
 		})
