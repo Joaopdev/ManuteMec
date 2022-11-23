@@ -105,8 +105,8 @@ class Veiculo {
 		let formularioVeiculo = document.querySelector(".formularioVeiculo");
 		
 		console.log("chamando funcao mostrarTabela()");
-
-		
+		img_noData.style.display = "none";
+		tabelaVeiculo.style.display = "block";
 
 		veiculo.esconderFormularios();
 	}

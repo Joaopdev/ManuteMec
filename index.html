@@ -7,81 +7,426 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/estiloPadrao.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="../css/cadastros.css">
+  <link rel="stylesheet" href="../css/formularios.css">
+  <link rel="stylesheet" href="../css/tabelas.css">
   <title>ManuteMec&trade; | Home</title>
 </head>
 
 <body>
 
-  <img id="backgroundImage" src="./assets/images/background.jpg"
-    alt="Imagem de fundo que mostra um mecanico analisando um motor">
-  
-  <section class="sectionLogin">
+  <section class="telaLogin" style="display: block;">
 
-    <div id="container_home">
+    <img id="backgroundImage" src="./assets/images/background.jpg"
+      alt="Imagem de fundo que mostra um mecanico analisando um motor">
 
-      <img src="./assets/logotipo_inverseColor.png" id="logotipo_home" alt="">
-      <p id="texto_home">O controle do seu carro na palma de sua mão</p>
+    <section class="sectionLogin">
 
-      <button onclick="abrirCardLogin()" id="botao_home">Iniciar</button>
-    </div>
+      <div id="container_home">
 
-    <div class="container_login">
+        <img src="./assets/logotipo_inverseColor.png" id="logotipo_home" alt="">
+        <p id="texto_home">O controle do seu carro na palma de sua mão</p>
 
-      <div id="card_Login">
-        <h2 class="title_login">Entrar</h2>
-        <input class="form-control input-login" type="email" name="" id="inputEmail" placeholder="Digite seu e-mail">
+        <button onclick="abrirCardLogin()" id="botao_home">Iniciar</button>
+      </div>
 
-        <input class="form-control input-login" type="password" name="" id="inputSenha" placeholder="Digite sua senha">
-        
-        <a href="./pages/cadastros.html" class="form-control button-submit">Enviar</a>
-        <div class="message_login">
-          <p id="esqueci_senha">Esqueceu a senha?</p>
+      <div class="container_login">
 
-       <div>
-        <p id="fazer_cadastro">Faça seu <p id="novo_cadastro">cadastro</p> </p>
-       </div> 
+        <div id="card_Login">
+          <h2 class="title_login">Entrar</h2>
+          <input class="form-control input-login" type="email" name="" id="inputEmail" placeholder="Digite seu e-mail">
+
+          <input class="form-control input-login" type="password" name="" id="inputSenha"
+            placeholder="Digite sua senha">
+
+          <button onclick="validacao()" class="form-control button-submit">Enviar</button>
+          <div class="message_login">
+            <p id="esqueci_senha">Esqueceu a senha?</p>
+
+            <div>
+              <p id="fazer_cadastro">Faça seu
+              <p id="novo_cadastro">cadastro</p>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+  </section>
+
+  <section class="home" style="width: 100vw; height: 100vh; display: none">
+    <header class="cabecalhoDefault">
+      <section class="menuDefault">
+        <div class="logotipo">
+          <img class="imgLogotipo" src="../assets/logotipo/logo_lateral.png" alt="Logotipo ManuteMec">
+        </div>
+        <nav class="navBarMenu">
+          <ul class="listaNavBar">
+            <a href="../index.html">
+              <li class="listItem">Home</li>
+            </a>
+            <a href="manutencao.html">
+              <li class="listItem">Manutenções</li>
+            </a>
+            <a href="cadastros.html">
+              <li class="listItem">Cadastros</li>
+            </a>
+            <a href="login.html">
+              <li class="listItem">Login</li>
+            </a>
+          </ul>
+        </nav>
+      </section>
+    </header>
+  
+    <main class="containerDefault">
+      <section class="containerMenuVertical">
+        <h2 class="subtituloMenuVertical">Cadastros</h2>
+        <nav class="navMenuVertical">
+          <ul>
+            <li class="itemMenu" onclick="veiculo.mostrarTabela()">Veículo</li>
+            <li class="itemMenu" onclick="categoria.mostrarTabela()">Categoria</li>
+            <li class="itemMenu" onclick="fornecedor.mostrarTabela()">Fornecedor</li>
+            <li class="itemMenu" onclick="pecas.mostrarTabela()">Peças</li>
+            <li class="itemMenu" onclick="oficina.mostrarTabela()">Oficina</li>
+            <li class="itemMenu" onclick="servicos.mostrarTabela()">Serviço</li>
+          </ul>
+        </nav>
+      </section>
+  
+      <hr class="divisoria">
+  
+      <section class="containerFormulario">
+  
+        <h2 class="titulo_cardFormulario"></h2>
+  
+        <img class="svg_nodata" src="../assets/svg_nodata.svg" alt="Sem dados para informar no momento.">
+  
+        <div id="flip-card">
+  
+  
+          <div class="container_veiculos " id="flip-card-inner">
+  
+            <div class="container_tabela_veiculo " id="flip-card-front">
+              <div class="btn-group-tabela">
+                <button class="btn-novoVeiculo btn-formVeiculo" onclick="veiculo.criarNovoVeiculo()">Novo</button>
+                <button class="btn-voltar">Voltar</button>
+              </div>
+              <table class="tabelaDefault">
+                <thead>
+                  <th class="center">ID</th>
+                  <th>Modelo</th>
+                  <th>Placa</th>
+                  <th>Cor</th>
+                  <th>Ações</th>
+                </thead>
+                <tbody id="tbodyVeiculos" class="">
+                  <!-- aqui vai a tabela dinamica -->
+                  <tr>
+                    <td>1</td>
+                    <td>Gol G5</td>
+                    <td>lpt8100</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Gol G6</td>
+                    <td>lpt8120</td>
+                    <td>teste</td>
+                    <td>teste</td>
+                  </tr>
+  
+                </tbody>
+              </table>
+            </div>
+  
+            <fieldset class="fieldsetFormulario formularioVeiculo" id="flip-card-back">
+              <legend>Veiculo</legend>
+              <form class="formularioDefault" action="">
+                <label class="labelConfig" for="inputNome">Modelo</label>
+                <input autocomplete="off" id="inputNome" class="inputConfig" placeholder="Digite o nome da categoria"
+                  type="text">
+  
+                <label class="labelConfig" for="inputPlaca">Placa</label>
+                <input class="inputConfig" id="inputPlaca" type="text">
+  
+                <label class="labelConfig" for="inputCor">Cor</label>
+                <input class="inputConfig" id="inputCor" type="text">
+  
+                <label class="labelConfig" for="inputDate">Data de criação</label>
+                <input class="inputConfig" id="inputDate" type="date">
+  
+                <div class="btn-group ">
+                  <button class="btn-submit" onclick="veiculo.salvar()" type="submit">Salvar</button>
+                  <button class="btn-cancel" onclick="veiculo.cancelar()">Cancelar</button>
+                </div>
+              </form>
+            </fieldset>
+          </div>
+        </div>
+  
+  
+        <fieldset class="fieldsetFormulario formularioCategoria">
+          <legend>Categoria</legend>
+          <form class="formularioDefault" action="">
+            <label class="labelConfig" for="inputNome">Nome</label>
+            <input autocomplete="off" id="inputNome" class="inputConfig" placeholder="Digite o nome da categoria"
+              type="text">
+  
+            <label class="labelConfig" for="inputDate">Data de criação</label>
+            <input class="inputConfig" id="inputDate" type="date">
+  
+            <label class="labelConfig" for="textarea">Descrição</label>
+            <textarea class="inputConfig" placeholder="Digite uma descrição para a categoria" name="Descrição"
+              id="textarea" cols="10" rows="20"></textarea>
+            <div class="btn-group">
+  
+              <button class="btn-submit" onclick="" type="submit">Salvar</button>
+              <button class="btn-cancel">Cancelar</button>
+            </div>
+  
+          </form>
+  
+  
+        </fieldset>
+  
+        <fieldset class="fieldsetFormulario formularioFornecedor">
+          <legend>Fornecedor</legend>
+          <form class="formularioDefault" action="">
+            <label class="labelConfig" for="inputNome">Nome</label>
+            <input autocomplete="off" id="inputNome" class="inputConfig" placeholder="Digite o nome do fornecedor"
+              type="text">
+  
+            <label class="labelConfig" for="selectCategria">Categoria</label>
+            <select class="inputConfig" name="categoria" id="selectCategria" placeholder="Selecione">
+              <option selected value="">Selecione</option>
+              <option value="">Elétrica</option>
+              <option value="">Suspensão</option>
+              <option value="">Mecânico</option>
+              <option value="">Acabamento</option>
+              <option value="">Estofaria</option>
+            </select>
+  
+            <label class="labelConfig" for="inputDate">Data de criação</label>
+            <input class="inputConfig" id="inputDate" type="date">
+  
+            <label class="labelConfig" for="inputCNPJ">CNPJ</label>
+            <input autocomplete="off" id="inputCNPJ" class="inputConfig" placeholder="Digite o nome do fornecedor"
+              type="text">
+  
+            <div class="btn-group">
+  
+              <button class="btn-submit" onclick="" type="submit">Salvar</button>
+              <button class="btn-cancel">Cancelar</button>
+            </div>
+  
+          </form>
+        </fieldset>
+  
+        <fieldset class="fieldsetFormulario formularioPecas">
+          <legend>Peças</legend>
+          <form action="" class="formularioDefault">
+            <label for="" class="labelConfig">Nome</label>
+            <input placeholder="Digite o nome da peça" type="text" class="inputConfig">
+  
+            <label for="inputPreco" class="labelConfig">Preço</label>
+            <input type="text" class="inputConfig" id="inputPreco" placeholder="Digite o valor da peça">
+  
+            <label class="labelConfig" for="inputDate">Data de criação</label>
+            <input class="inputConfig" id="inputDate" type="date">
+  
+            <label class="labelConfig" for="selectCategria">Categoria</label>
+            <select class="inputConfig" name="categoria" id="selectCategria" placeholder="Selecione">
+              <option selected value="">Selecione a categoria</option>
+              <option value="Acabamento">Acabamento</option>
+              <option value="Eletrica">Elétrica</option>
+              <option value="Estofaria">Estofaria</option>
+              <option value="Mecanico">Mecânico</option>
+              <option value="Pintura">Pintura</option>
+              <option value="Suspensao">Suspensão</option>
+            </select>
+  
+            <label for="" class="labelConfig">Fornecedor</label>
+            <select class="inputConfig" name="fornecedor" id="selectFornecedor" placeholder="Selecione">
+              <option selected value="">Selecione a categoria</option>
+              <option value="">BOSCH</option>
+              <option value="">COFAP</option>
+              <option value="">DELPHI</option>
+              <option value="">MAGNETI MARELLI</option>
+              <option value="">MONROE</option>
+              <option value="">MOURA</option>
+              <option value="">NAKATA</option>
+              <option value="">ONTITECH</option>
+            </select>
+  
+  
+            <label for="inputDataCompra" class="labelConfig">Data da compra</label>
+            <input id="inputDataCompra" type="date" class="inputConfig" placeholder="">
+  
+            <div class="inputRadioGroup">
+              <label class="labelConfig" for="inputValidade">Validade em: </label>
+  
+              <div class="divInputRadio">
+  
+                <label class="labelConfig" for="inputValidadeKm">Kilometros</label>
+                <input type="radio" name="inputValidade" id="inputValidadeKm">
+              </div>
+  
+              <div class="divInputRadio">
+  
+                <label class="labelConfig" for="inputValidadeMeses">Meses</label>
+                <input type="radio" name="inputValidade" id="inputValidadeMeses">
+              </div>
+  
+              <div class="divInputRadio">
+  
+                <label class="labelConfig" for="inputValidadeAnos">Anos</label>
+                <input type="radio" name="inputValidade" id="inputValidadeAnos">
+              </div>
+  
+            </div>
+  
+            <label class="labelConfig" for="inputPrazoValidadePeca">Prazo em </label>
+            <input type="text" class="inputPrazoValidadePeca inputConfig" id="inputPrazoValidadePeca">
+  
+  
+            <div class="btn-group">
+  
+              <button class="btn-submit" onclick="" type="submit">Salvar</button>
+              <button class="btn-cancel">Cancelar</button>
+            </div>
+          </form>
+        </fieldset>
+  
+        <fieldset class="fieldsetFormulario formularioOficina">
+          <legend>Oficina</legend>
+          <form action="" class="formularioDefault">
+            <label for="inputNomeOficina" class="labelConfig">Nome</label>
+            <input id="inputNomeOficina" placeholder="Digite o nome da oficina" type="text" class="inputConfig">
+  
+            <label for="inputResponsavelOficina" class="labelConfig">Responsavel</label>
+            <input id="inputResponsavelOficina" placeholder="Digite o nome do responsavel oficina" type="text"
+              class="inputConfig">
+  
+            <label class="labelConfig" for="inputDate">Data de criação</label>
+            <input class="inputConfig" id="inputDate" type="date">
+  
+            <label for="selectCategriaEspecialidade" class="labelConfig">Especialidade</label>
+            <select class="inputConfig" name="especialidade" id="selectCategriaEspecialidade" placeholder="Selecione">
+              <option selected value="">Selecione a especialidade</option>
+              <option value="Acabamento">Acabamento</option>
+              <option value="Eletrica">Elétrica</option>
+              <option value="Estofaria">Estofaria</option>
+              <option value="Mecanico">Mecânico</option>
+              <option value="Pintura">Pintura</option>
+              <option value="Suspensao">Suspensão</option>
+            </select>
+  
+            <label for="inputEnderecoOficina" class="labelConfig">Endereço</label>
+            <input id="inputEnderecoOficina" placeholder="Digite o endereço" type="text" class="inputConfig">
+  
+            <label for="inputNumeroOficina" class="labelConfig">Número | Complemento</label>
+            <input id="inputNumeroOficina" placeholder="Digite o número e complemento do endereço" type="text"
+              class="inputConfig">
+  
+            <label for="inputCidadeOficina" class="labelConfig">Cidade</label>
+            <input id="inputCidadeOficina" placeholder="Digite a cidade da oficina" type="text" class="inputConfig">
+  
+            <label class="labelConfig" for="inputEstadoOficina">Estado</label>
+            <select class="inputConfig">
+  
+              <option value="Selecione um estado">Selecione um estado</option>
+              <option value="AC">AC - Acre</option>
+              <option value="AL">AL - Alagoas</option>
+              <option value="AP">AP - Amapá</option>
+              <option value="AM">AM - Amazonas</option>
+              <option value="BA">BA - Bahia</option>
+              <option value="CE">CE - Ceara</option>
+              <option value="DF">DF - Distrito Federal</option>
+              <option value="ES">ES - Espírito Santo</option>
+              <option value="GO">GO - Goiás</option>
+              <option value="MA">MA - Maranhão </option>
+              <option value="MT">MT - Mato Grosso</option>
+              <option value="MS">MS - Mato Grosso do Sul</option>
+              <option value="MG">MG - Minas Gerais</option>
+              <option value="PA">PA - Pará</option>
+              <option value="PB">PB - Paraíba</option>
+              <option value="PR">PR - Paraná</option>
+              <option value="PE">PE - Pernambuco</option>
+              <option value="PI">PI - Piauí</option>
+              <option value="RJ">RJ - Rio de Janeiro</option>
+              <option value="RN">RN - Rio Grande do Norte</option>
+              <option value="RS">RS - Rio Grande do Sul</option>
+              <option value="RO">RO - Rondônia</option>
+              <option value="RR">RR - Roraima</option>
+              <option value="SC">SC - Santa Catarina</option>
+              <option value="SP">SP - São Paulo</option>
+              <option value="SE">SE - Sergipe</option>
+              <option value="TO">TO - Tocantins</option>
+            </select>
+  
+  
+  
+            <label class="labelConfig" for="inputContatoOficina">Contato</label>
+            <input value="+55 (32)" type="tel" name="contato" class="inputConfig" id="inputContatoOficina">
+  
+            <label for="inputContatoEmailOficina" class="labelConfig">E-mail</label>
+            <input class="inputConfig" type="email" id="inputContatoEmailOficina" placeholder="Digite o email de contato">
+  
+            <div class="btn-group">
+  
+              <button class="btn-submit" onclick="" type="submit">Salvar</button>
+              <button class="btn-cancel">Cancelar</button>
+            </div>
+          </form>
+        </fieldset>
+  
+        <fieldset class="fieldsetFormulario formularioServico">
+          <legend>Serviços</legend>
+          <form action="" class="formularioDefault">
+            <label for="inputNomeServico" class="labelConfig">Nome</label>
+            <input id="inputNomeServico" placeholder="Digite o nome do serviço" type="text" class="inputConfig">
+  
+            <label for="selectCategriaServico" class="labelConfig">Categoria</label>
+            <select class="inputConfig" name="categoria" id="selectCategriaServico" placeholder="Selecione">
+              <option selected value="">Selecione a categoria do serviço</option>
+              <option value="Acabamento">Acabamento</option>
+              <option value="Eletrica">Elétrica</option>
+              <option value="Estofaria">Estofaria</optieon>
+              <option value="Mecanico">Mecânico</option>
+              <option value="Pintura">Pintura</option>
+              <option value="Suspensao">Suspensão</option>
+            </select>
+  
+            <label class="labelConfig" for="inputDate">Data de criação</label>
+            <input class="inputConfig" id="inputDate" type="date">
+  
+            <label class="labelConfig" for="textarea">Descrição</label>
+            <textarea class="inputConfig" placeholder="Digite uma descrição para o serviço" name="Descricao" id="textarea"
+              cols="10" rows="20"></textarea>
+  
+            <div class="btn-group">
+  
+              <button class="btn-submit" onclick="" type="submit">Salvar</button>
+              <button class="btn-cancel">Cancelar</button>
+            </div>
+          </form>
+        </fieldset>
+      </section>
+    </main>
+  
+    <footer class="rodapeDefault">
+      Todos os direitos reservados ao criador <a id="linkRodape" target="_blank"
+        href="https://github.com/Joaopdev/">JoaoPDev</a> &copy; 2022
+    </footer>
   </section>
 
 
+  <script src="./js/index.js"></script>
+  <script src="./js/cadastro/veiculo.js"></script>
+  <script src="./js/cadastro/categorias.js"></script>
 
-
-  <script>
-    function abrirCardLogin() {
-      let card = document.querySelector(".container_login")
-      let botao = document.querySelector("#botao_home");
-      let backgroundImage = document.querySelector("#backgroundImage");
-      backgroundImage.style.filter = "brightness(10%) ";
-
-      if (card.style.display = "none") {
-        card.style.transition = "ease-in 1s";
-        card.style.display = "flex";
-        botao.style.visibility = "hidden";
-      }
-      else {
-        card.style.display = "flex"
-      }
-    }
-
-    
-
-    let esqueciSenha = document.querySelector("#esqueci_senha");
-    esqueciSenha.addEventListener("click", () => {
-      alert("Essa função ainda não foi implementada. Tente usar e-mail: admin@admin e senha: \"123456teste\" para teste");
-    })
-
-    let novoCadastro = document.querySelector("#novo_cadastro");
-    novoCadastro.addEventListener("click", function() {
-      alert("Essa função ainda não foi implementada. Tente usar e-mail: admin@admin e senha: \"123456teste\" para teste");
-    })
-
-
-
-
-
-  </script>
 </body>
 
 </html>

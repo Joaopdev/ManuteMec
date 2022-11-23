@@ -17,7 +17,7 @@ let btn_formularioServico = document.querySelector(".btn-formServico");
 
 
 
-export const esconderFormularios = function () {
+const esconderFormularios = function () {
   formularioCategoria.style.display = "none"
   formularioFornecedor.style.display = "none";
   formularioPecas.style.display = "none";
@@ -26,113 +26,51 @@ export const esconderFormularios = function () {
 } 
 
 
-btn_formularioVeiculo.addEventListener("click", function() {
+function validacao() {
+  let email = document.querySelector("#inputEmail");
+  let senha = document.querySelector("#inputSenha");
+  let telaLogin = document.querySelector(".telaLogin");
+  let telaHome = document.querySelector(".home");
 
-  img_noData.style.display = "none";
-  
-  formularioVeiculo.style.display = "none"
-  formularioCategoria.style.display = "none"
-  formularioFornecedor.style.display = "none";
-  formularioPecas.style.display = "none";
-  formularioOficina.style.display = "none";
-  formularioServico.style.display = "none";
-
-  if (formularioVeiculo.style.display === "none") {
-    formularioVeiculo.style.display = "block";
-  } else {
-    formularioVeiculo.style.display = "block";
+  if (email.value != "admin@admin.com" || senha.value != "admin123") {
+    
+    console.log("Entrou na validacao. Email ou senha errados")
   }
-});
 
-
-btn_formularioCategoria.addEventListener("click", function() {
-
-  img_noData.style.display = "none";
-
-  formularioCategoria.style.display = "none"
-  formularioFornecedor.style.display = "none";
-  formularioPecas.style.display = "none";
-  formularioOficina.style.display = "none";
-  formularioServico.style.display = "none";
-
-  if (formularioCategoria.style.display === "none") {
-    formularioCategoria.style.display = "block";
-  } else {
-    formularioCategoria.style.display = "block";
+  else {
+    console.log("Senha e email corretos");
+    telaLogin.style.display = "none";
+    telaHome.style.display = "block";
   }
-});
+}
 
+function abrirCardLogin() {
+  let card = document.querySelector(".container_login")
+  let botao = document.querySelector("#botao_home");
+  let backgroundImage = document.querySelector("#backgroundImage");
+  backgroundImage.style.filter = "brightness(10%) ";
 
-btn_formularioFornecedor.addEventListener("click", () => {
-  img_noData.style.display = "none";
-
-  formularioVeiculo.style.display = "none"
-  formularioCategoria.style.display = "none"
-  formularioFornecedor.style.display = "none";
-  formularioPecas.style.display = "none";
-  formularioOficina.style.display = "none";
-  formularioServico.style.display = "none";
-
-  if (formularioFornecedor.style.display === "none") {
-    formularioFornecedor.style.display = "block";
-  } else {
-    formularioFornecedor.style.display = "block";
+  if (card.style.display = "none") {
+    card.style.transition = "ease-in 1s";
+    card.style.display = "flex";
+    botao.style.visibility = "hidden";
   }
-});
-
-
-
-btn_formularioPecas.addEventListener("click", () => {
-  img_noData.style.display = "none";
-
-  formularioVeiculo.style.display = "none"
-  formularioCategoria.style.display = "none"
-  formularioFornecedor.style.display = "none";
-  formularioPecas.style.display = "none";
-  formularioOficina.style.display = "none";
-  formularioServico.style.display = "none";
-
-  if (formularioPecas.style.display === "none") {
-    formularioPecas.style.display = "block";
-  } else {
-    formularioPecas.style.display = "block";
+  else {
+    card.style.display = "flex"
   }
-});
+}
 
-btn_formularioOficina.addEventListener("click", () => {
-  img_noData.style.display = "none";
 
-  formularioVeiculo.style.display = "none"
-  formularioCategoria.style.display = "none"
-  formularioFornecedor.style.display = "none";
-  formularioPecas.style.display = "none";
-  formularioOficina.style.display = "none";
-  formularioServico.style.display = "none";
 
-  if (formularioOficina.style.display = "none") {
-    formularioOficina.style.display = "block";
-  } else {
-    formularioOficina.style.display = "block";
-  }
-});
+let esqueciSenha = document.querySelector("#esqueci_senha");
+esqueciSenha.addEventListener("click", () => {
+  alert("Essa função ainda não foi implementada. Tente usar e-mail: admin@admin e senha: \"123456teste\" para teste");
+})
 
-btn_formularioServico.addEventListener("click", () => {
-  img_noData.style.display = "none";
-  
-  formularioVeiculo.style.display = "none"
-  formularioCategoria.style.display = "none"
-  formularioFornecedor.style.display = "none";
-  formularioPecas.style.display = "none";
-  formularioOficina.style.display = "none";
-  formularioServico.style.display = "none";
-
-  if (formularioServico.style.display = "none") {
-    formularioServico.style.display = "block";
-  } else {
-    formularioServico.style.display = "block";
-  }
-});
-
+let novoCadastro = document.querySelector("#novo_cadastro");
+novoCadastro.addEventListener("click", function () {
+  alert("Essa função ainda não foi implementada. Tente usar e-mail: admin@admin e senha: \"123456teste\" para teste");
+})
 
 
 

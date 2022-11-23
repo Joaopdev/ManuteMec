@@ -24,7 +24,7 @@
 }
 
 .itemMenu {
-  width: 250px;
+  width: 200px;
   height: 45px;
   background-color: var(--cor-item-navegacao);
   border: 1px solid white;
@@ -44,7 +44,7 @@
 .itemMenu:hover {
   background-color: rgba(169, 169, 169, 1);
   color: black;
-  width: 70%;
+  width: 80%;
 }
 
 .itemMenu:active {

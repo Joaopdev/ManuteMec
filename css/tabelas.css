@@ -37,7 +37,7 @@
   width: 90%;
   height: 100%;
 
-  display: block;
+  display: none;
   flex-direction: column;
   border-radius: 10px;
   overflow: auto;
